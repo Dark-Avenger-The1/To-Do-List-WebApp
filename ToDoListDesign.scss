@@ -1,0 +1,52 @@
+*{
+    margin: 0px;
+}
+@mixin centerPosition{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+$dvChildWidth: 90%;
+
+.webContainer{
+    height: 90vh;
+    @include centerPosition();
+    
+}
+main{
+    width: 80%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+section{
+    background-color: blue;
+    @include centerPosition();
+    
+    .dvInputContainer{
+        width: $dvChildWidth;
+        @include centerPosition();
+        flex-direction: row;
+    }
+    input{
+        width: 70%;
+        height: 40px;
+    }
+    button{
+        height: 45px;
+    }
+    .dvListContainer{
+        background-color: purple;
+        height: 70%;
+        width: $dvChildWidth;
+        overflow-y: auto;
+    }
+    
+}
+aside{
+    background-color: red;
+    height: 100%;
+}

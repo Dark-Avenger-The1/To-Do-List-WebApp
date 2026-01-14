@@ -1,0 +1,52 @@
+* {
+  margin: 0px;
+}
+
+.webContainer {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+main {
+  width: 80%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+section {
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+section .dvInputContainer {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-direction: row;
+}
+section input {
+  width: 70%;
+  height: 40px;
+}
+section button {
+  height: 45px;
+}
+section .dvListContainer {
+  background-color: purple;
+  height: 70%;
+  width: 90%;
+  overflow-y: auto;
+}
+
+aside {
+  background-color: red;
+  height: 100%;
+}/*# sourceMappingURL=ToDoListDesign.css.map */
