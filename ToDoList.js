@@ -44,7 +44,7 @@ function createButton(index){
     button.className="btnQuestComplete"
     button.innerText="X";
     button.onclick = () =>{
-        list.splice(index,1);
+        quest.splice(index,1);
         loadQuest();
     };
     return button;

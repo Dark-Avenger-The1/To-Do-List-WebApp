@@ -10,7 +10,7 @@
 }
 
 $dvChildWidth: 90%;
-
+$marginBottom:10px;
 .webContainer{
     height: 90vh;
     @include centerPosition();
@@ -36,10 +36,14 @@ section{
         width: $dvChildWidth;
         @include centerPosition();
         flex-direction: row;
+        margin-bottom: $marginBottom;
     }
     input{
         width: 70%;
         height: 40px;
+    }
+    .txtFindQuest{
+        margin-bottom: $marginBottom;
     }
     button{
         height: 45px;

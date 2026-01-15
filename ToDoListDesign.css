@@ -38,10 +38,14 @@ section .dvInputContainer {
   justify-content: center;
   flex-direction: column;
   flex-direction: row;
+  margin-bottom: 10px;
 }
 section input {
   width: 70%;
   height: 40px;
+}
+section .txtFindQuest {
+  margin-bottom: 10px;
 }
 section button {
   height: 45px;
