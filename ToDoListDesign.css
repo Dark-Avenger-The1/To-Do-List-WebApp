@@ -18,7 +18,7 @@ main {
   justify-content: center;
   flex-direction: column;
   flex-direction: row;
-  min-height: 500px;
+  min-height: 300px;
 }
 
 section {
