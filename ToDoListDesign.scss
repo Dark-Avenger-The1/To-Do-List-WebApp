@@ -1,6 +1,7 @@
 *{
     margin: 0px;
 }
+
 @mixin centerPosition{
     display: flex;
     align-items: center;
@@ -20,7 +21,7 @@ main{
     height: 90%;
     @include centerPosition();
     flex-direction: row;
-    
+    min-height: 500px;
     
 }
 section{
@@ -48,18 +49,39 @@ section{
         height: 70%;
         width: $dvChildWidth;
         overflow-y: auto;
+        margin-bottom: 10px;
+    }
+    .btnClear{
+            height: 45px;
+            width: $dvChildWidth;
+    }
         
     }
+    ul{
+        list-style-type:georgian;
+        margin: 0;
+        li{
+        border-style: solid;
+        border-color: white;
+        margin-bottom: 10px;
+        }
+    }
     
-}
+
 aside{
     background-color: red;
     height: 100%;
     width: 30%;
     max-width: 400px;
+    img{
+        width: 40%;
+        min-width: 120px;
+    }
     .dvDialogue{
         background-color: black;
-        color:white
+        color:white;
+        width:100%;
+        height: 40%;
     }
     
 }
