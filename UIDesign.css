@@ -1,0 +1,40 @@
+* {
+  font-family: "Pixelify Sans";
+}
+
+html {
+  background-color: black;
+}
+
+header {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.uiSection {
+  border-style: solid;
+  background: black;
+  border-color: white;
+}
+
+.uiListContainer {
+  border-style: solid;
+  background: black;
+  border-color: white;
+}
+
+.uiAside {
+  border-style: solid;
+  background: black;
+  border-color: white;
+}
+
+.btnQuestComplete {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  color: red;
+}/*# sourceMappingURL=UIDesign.css.map */

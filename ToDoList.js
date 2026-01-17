@@ -1,4 +1,5 @@
 let quest = ["Conquer Britain","Set Sail to Atlantic"];
+let alter = [0,0];
 let btnAdd = document.querySelector(".btnAdd");
 let questList = document.querySelector('.ulQuestList');
 let txtQuest = document.querySelector('.txtQuest');
@@ -35,6 +36,20 @@ function loadQuest(){
         const li = document.createElement("li");
         li.textContent=accumaltor;
         li.append(createButton(i));
+        li.onclick = () =>{
+            if(alter[i]===0){
+                li.style.color ="green";
+                console.log("Green");
+                alter[i]+=1;
+            }
+            else if(alter[i]===1){
+                li.style.color ="red"
+                console.log("Red");
+                alter[i]-=1;
+            }
+            
+            
+        }
         questList.append(li);
     }
 }

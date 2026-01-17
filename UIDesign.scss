@@ -1,0 +1,35 @@
+*{
+    font-family: 'Pixelify Sans';
+}
+@mixin borderConfig{
+    border-style: solid;
+    background: black;
+    border-color: white;
+}
+
+html{
+    background-color: black;
+}
+header{
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+.uiSection{
+    @include borderConfig();
+}
+
+.uiListContainer{
+    @include borderConfig();
+}
+.uiAside{
+     @include borderConfig();
+}
+.btnQuestComplete{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    color: red;
+}
