@@ -4,6 +4,7 @@ let btnAdd = document.querySelector(".btnAdd");
 let questList = document.querySelector('.ulQuestList');
 let txtQuest = document.querySelector('.txtQuest');
 let btnClear = document.querySelector('.btnClear');
+
 loadQuest();
 btnAdd.onclick = () =>{
     addQuest();
@@ -21,9 +22,11 @@ function addQuest(){
         alert(questName+" Already Exist");
         return;
     }else{
-         quest.push(questName); // Use .push() for arrays
+        quest.push(questName); // Use .push() for arrays
+        alter.push(0);
+        floweyInteractButton("add",questName);
          // Clear the box after adding
-         txtQuest.value="";
+        txtQuest.value="";
         loadQuest(); // Refresh the list on screen
     }
 }
@@ -35,10 +38,12 @@ function loadQuest(){
         accumaltor=quest[i];
         const li = document.createElement("li");
         li.textContent=accumaltor;
+        li.style.color=(alter[i]===0)?"red":"green";
         li.append(createButton(i));
         li.onclick = () =>{
             if(alter[i]===0){
                 li.style.color ="green";
+                floweyInteractButton("completed",accumaltor)
                 console.log("Green");
                 alter[i]+=1;
             }
@@ -59,17 +64,28 @@ function createButton(index){
     button.className="btnQuestComplete"
     button.innerText="X";
     button.onclick = () =>{
+        let toRemove = quest[index];
         quest.splice(index,1);
         loadQuest();
+        floweyInteractButton("delete",toRemove);
     };
     return button;
 }
 
 function clearData(){
-    alert("Are you sure to abandon all the quest?");
-    questList.innerHTML="";
-    quest=[];
+    if (confirm("Are you sure to abandon all the quests?")) {
+    // This code ONLY runs if they click OK
+    questList.innerHTML = "";
+    quest = [];
     loadQuest();
+    floweyInteractButton("clear", "");
+    } else {
+        // This runs if they click Cancel
+        let dialogue ="Hee hee... I knew you didn't have the guts to quit!";
+        let time=dialogue.length;
+        floweyNormalInteraction(time);
+        floweySpeak(dialogue);
+    }
 }
 
 

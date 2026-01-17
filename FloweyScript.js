@@ -4,7 +4,7 @@ const dialogueBox = document.querySelector(".dvDialogue");
 
 loadFloweyGreetings();
 function loadFloweyGreetings(){
-    setTimeout(()=>{flowey.src="Flowey/FloweyNormal.png";floweyAudioManager();},3500);
+    setTimeout(()=>{flowey.src="Flowey/FloweyNormal.png";floweyAudioManager();},3330);
     floweySoundEffect.play();
     floweySpeak("Greetings, I am Flowey. I the one will assist and manage your Quest List.");
 }
@@ -32,12 +32,68 @@ function floweySpeak(message) {
     type();
 }
 
-function floweyInteractButton(btnType){
-    setTimeout(()=>{flowey.src="Flowey/FloweyNormal.png";floweyAudioManager();},3500);
-    floweySoundEffect.play();
-    floweySpeak("Greetings, I am Flowey. I the one will assist and manage your Quest List.");
+function floweyInteractButton(btnType,quest){
+    let floweyMessage = "";
+    switch(btnType){
+        case "add":
+            let time=(quest.length+22)*55;
+            floweyNormalInteraction(time)
+            floweyMessage="Added New Quest Titled "+quest+".";
+            floweySpeak(floweyMessage);
+            break;
+        case "clear":
+            let time2=22*45;
+            floweyNormalInteraction(time2);
+            floweySpeak("All quest are cleared.");
+            break;
+        case "delete":
+            let time3=(quest.length+21)*55;
+            floweyNormalInteraction(time3);
+            floweyMessage="Successfully Deleted "+quest+".";
+            floweySpeak(floweyMessage);
+            break;
+        case "completed":
+            let time4 = (quest.length+17)*55;
+            floweyNormalInteraction(time4)
+            floweyMessage=quest+" quest is completed!";
+            floweySpeak(floweyMessage);
+            break;
+    }
+    
+    
 }
 
-function floweyMoodChange(){
+function floweyMoodChange(mood){
+    
+    switch(mood){
+        case "silly":
+            flowey.src="Flowey/FloweySilly.png"
+            break;
+        case "normal":
+            flowey.src="Flowey/FloweyNormal.png"
+            break;
+        case "annoyed":
+            flowey.src="Flowey/FloweyAnnoyed.png"
+            break;
+        case "mad":
+            flowey.src="Flowey/FloweyMad.png"
+            break;
+        case "evil1":
+            flowey.src="Flowey/FloweyEvil1.png"
+            break;
+        case "evil2":
+            flowey.src="Flowey/FloweyEvil2.png"
+            break;
+        case "evil3":
+            flowey.src="Flowey/FloweyEvil3.png"
+            break;
+        default:
+            break;
+    }
+}
 
+function floweyNormalInteraction(time){
+    setTimeout(()=>{floweyMoodChange("normal");floweyAudioManager();},time);
+    floweyMoodChange("silly");
+    floweySoundEffect.play();
 }
