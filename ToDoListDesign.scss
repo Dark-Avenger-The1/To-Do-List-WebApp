@@ -22,7 +22,7 @@ main{
     @include centerPosition();
     flex-direction: row;
     min-height: 300px;
-    
+    max-height: 900px;
 }
 section{
     height: 100%;
