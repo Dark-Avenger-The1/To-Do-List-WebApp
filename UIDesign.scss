@@ -7,6 +7,12 @@
     border-color: white;
 }
 
+@mixin buttonConfig{
+    background-color: transparent;
+    border-color: white;
+    border-style: solid;
+}
+
 html{
     background-color: black;
 }
@@ -32,4 +38,14 @@ header{
     background-color: transparent;
     border: none;
     color: red;
+}
+.btnAdd{
+    @include buttonConfig();
+    color: white;
+}
+.btnClear{
+    @include buttonConfig();
+    color: red;
+    font-size: 18px;
+    margin-bottom: 5px;
 }

@@ -37,4 +37,20 @@ header {
   background-color: transparent;
   border: none;
   color: red;
+}
+
+.btnAdd {
+  background-color: transparent;
+  border-color: white;
+  border-style: solid;
+  color: white;
+}
+
+.btnClear {
+  background-color: transparent;
+  border-color: white;
+  border-style: solid;
+  color: red;
+  font-size: 18px;
+  margin-bottom: 5px;
 }/*# sourceMappingURL=UIDesign.css.map */

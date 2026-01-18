@@ -33,6 +33,7 @@ section{
     
 
     .dvInputContainer{
+        margin-top: 10px;
         width: $dvChildWidth;
         @include centerPosition();
         flex-direction: row;
