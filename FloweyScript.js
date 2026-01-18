@@ -13,6 +13,19 @@ function floweyAudioManager(){
     floweySoundEffect.pause();
     floweySoundEffect.currentTime=0;
 }
+function floweyAudioManager(){
+    floweySoundEffect.pause();
+    floweySoundEffect.currentTime=0;
+}
+function floweyAudioPicker(voiceType){
+    if(voiceType==="normal"){
+        floweySoundEffect.src="FloweyAudio/FloweyNormalDialogue.mp3";
+    }else if(voiceType==="evil"){
+         floweySoundEffect.src="FloweyAudio/FloweyEvilDialogue.mp3";
+    }else if(voiceType==="laugh"){
+        floweySoundEffect.src="FloweyAudio/FloweyEvilLaugh.mp3";
+    }
+}
 
 function floweySpeak(message) {
     // 1. Clear the box
@@ -95,5 +108,18 @@ function floweyMoodChange(mood){
 function floweyNormalInteraction(time){
     setTimeout(()=>{floweyMoodChange("normal");floweyAudioManager();},time);
     floweyMoodChange("silly");
+    floweySoundEffect.play();
+}
+
+function floweyNormalInteraction(time,reaction){
+    setTimeout(()=>{floweyMoodChange("normal");floweyAudioManager();},time);
+    floweyMoodChange(reaction);
+    floweySoundEffect.play();
+}
+
+function floweyNormalInteraction(time,reaction,voiceType){
+    floweyAudioPicker(voiceType);
+    setTimeout(()=>{floweyMoodChange("normal");floweyAudioManager();},time);
+    floweyMoodChange(reaction);
     floweySoundEffect.play();
 }

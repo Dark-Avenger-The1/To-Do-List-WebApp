@@ -86,10 +86,14 @@ aside {
 aside img {
   width: 40%;
   min-width: 120px;
+  cursor: pointer;
 }
 aside .dvDialogue {
   color: white;
   margin-left: 10px;
   width: 90%;
   height: 40%;
+}
+aside a {
+  text-decoration: none;
 }/*# sourceMappingURL=ToDoListDesign.css.map */

@@ -66,6 +66,7 @@ function createButton(index){
     button.onclick = () =>{
         let toRemove = quest[index];
         quest.splice(index,1);
+        alter.splice(index,1);
         loadQuest();
         floweyInteractButton("delete",toRemove);
     };
@@ -77,6 +78,7 @@ function clearData(){
     // This code ONLY runs if they click OK
     questList.innerHTML = "";
     quest = [];
+    alter=[];
     loadQuest();
     floweyInteractButton("clear", "");
     } else {

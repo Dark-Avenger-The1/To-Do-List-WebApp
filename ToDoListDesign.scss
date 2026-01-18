@@ -85,12 +85,17 @@ aside{
     img{
         width: 40%;
         min-width: 120px;
+        cursor: pointer;
     }
     .dvDialogue{
         color:white;
         margin-left: 10px;
         width:90%;
         height: 40%;
+        
+    }
+    a{
+        text-decoration: none;
     }
     
 }
