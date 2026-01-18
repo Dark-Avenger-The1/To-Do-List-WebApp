@@ -38,14 +38,16 @@ header{
     background-color: transparent;
     border: none;
     color: red;
+    font-size: 18px;
 }
 .btnAdd{
     @include buttonConfig();
-    color: white;
+    color: #009705;
+    margin-left: 10px;
 }
 .btnClear{
     @include buttonConfig();
-    color: red;
+    color: #DA1812;
     font-size: 18px;
     margin-bottom: 5px;
 }

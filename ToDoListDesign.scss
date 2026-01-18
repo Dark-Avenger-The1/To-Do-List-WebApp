@@ -65,6 +65,9 @@ section{
         list-style-type:georgian;
         margin: 0;
         li{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow:clip;
         width: 95%;
         height: 30px;
         font-size: 18px;

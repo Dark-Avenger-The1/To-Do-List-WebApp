@@ -68,6 +68,9 @@ ul {
   margin: 0;
 }
 ul li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
   width: 95%;
   height: 30px;
   font-size: 18px;
