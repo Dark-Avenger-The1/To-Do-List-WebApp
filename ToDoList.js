@@ -43,7 +43,7 @@ function loadQuest(){
         li.onclick = () =>{
             if(alter[i]===0){
                 li.style.color ="green";
-                floweyInteractButton("completed",accumaltor)
+                floweyInteractButton("completed",quest[i])
                 console.log("Green");
                 alter[i]+=1;
             }
