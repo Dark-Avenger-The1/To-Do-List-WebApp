@@ -44,10 +44,28 @@ header{
     @include buttonConfig();
     color: #009705;
     margin-left: 10px;
+    &:hover{
+        background-color: rgba(89, 88, 88, 0.785);
+    }
+    &:active{
+        background-color: rgba(226, 230, 226, 0.785);
+    }
 }
 .btnClear{
     @include buttonConfig();
     color: #DA1812;
     font-size: 18px;
     margin-bottom: 5px;
+     &:hover{
+        background-color: rgba(89, 88, 88, 0.785);
+    }
+    &:active{
+        background-color: rgba(226, 230, 226, 0.785);
+    }
+}
+.dvFlowey{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 }
