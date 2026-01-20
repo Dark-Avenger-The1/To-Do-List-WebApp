@@ -8,7 +8,7 @@ floweyContainer.onclick = ()=>{
     let dialogueSize=1;
     switch(touched){
         case 1:
-            dialogue = " Why do you keep clicking me, friend?";
+            dialogue = " Why do you keep poking me, friend?";
             dialogueSize=dialogue.length*50;
             floweyNormalInteraction(dialogueSize,"silly");
             floweySpeak(dialogue);
@@ -20,7 +20,7 @@ floweyContainer.onclick = ()=>{
             floweySpeak(dialogue);
              break;
         case 3:
-            dialogue=" Okay that's kinda to much touchy....."
+            dialogue=" Okay that's kinda too much touchy....."
             dialogueSize=dialogue.length*50;
             floweyNormalInteraction(dialogueSize,"annoyed");
             floweySpeak(dialogue);

@@ -47,6 +47,7 @@ function floweySpeak(message) {
 
 function floweyInteractButton(btnType,quest){
     let floweyMessage = "";
+    floweyAudioPicker("normal");
     switch(btnType){
         case "add":
             let time=(quest.length+22)*55;
