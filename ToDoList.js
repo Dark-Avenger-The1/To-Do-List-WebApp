@@ -4,8 +4,10 @@ let btnAdd = document.querySelector(".btnAdd");
 let questList = document.querySelector('.ulQuestList');
 let txtQuest = document.querySelector('.txtQuest');
 let btnClear = document.querySelector('.btnClear');
+let search = document.querySelector(".txtFindQuest");
+loadQuest(quest,alter);
 
-loadQuest();
+search.addEventListener("keydown",(event)=>{console.log(searchQuest(search.value))})
 btnAdd.onclick = () =>{
     addQuest();
 };
@@ -27,36 +29,51 @@ function addQuest(){
         floweyInteractButton("add",questName);
          // Clear the box after adding
         txtQuest.value="";
-        loadQuest(); // Refresh the list on screen
+        loadQuest(quest,alter); // Refresh the list on screen
     }
 }
 
-function loadQuest(){
+function loadQuest(arr,arr2){
     questList.innerHTML="";
     let accumaltor ="";
-    for(let i =0;i<quest.length;i++){
-        accumaltor=quest[i];
+    for(let i =0;i<arr.length;i++){
+        accumaltor=arr[i];
         const li = document.createElement("li");
         li.textContent=accumaltor;
-        li.style.color=(alter[i]===0)?"red":"green";
+        li.style.color=(arr2[i]===0)?"red":"green";
         li.append(createButton(i));
         li.onclick = () =>{
-            if(alter[i]===0){
+            if(arr2[i]===0){
                 li.style.color ="green";
-                floweyInteractButton("completed",quest[i])
+                floweyInteractButton("completed",arr[i])
                 console.log("Green");
-                alter[i]+=1;
+                arr2[i]+=1;
             }
-            else if(alter[i]===1){
+            else if(arr2[i]===1){
                 li.style.color ="red"
                 console.log("Red");
-                alter[i]-=1;
+                arr2[i]-=1;
             }
             
             
         }
         questList.append(li);
     }
+}
+
+function searchQuest(itemToSearch){
+    let tempArray=[];
+    let filteredQuest = quest.filter((value,index)=>{
+        if(value.toLowerCase().includes(itemToSearch.toLowerCase())){
+            tempArray.push(alter[index]);
+            return true;
+        }else{
+            return false;
+        }
+
+    });
+
+    loadQuest(filteredQuest,tempArray);
 }
 
 function createButton(index){
@@ -67,7 +84,7 @@ function createButton(index){
         let toRemove = quest[index];
         quest.splice(index,1);
         alter.splice(index,1);
-        loadQuest();
+        loadQuest(quest,alter);
         floweyInteractButton("delete",toRemove);
     };
     return button;
@@ -79,7 +96,7 @@ function clearData(){
     questList.innerHTML = "";
     quest = [];
     alter=[];
-    loadQuest();
+    loadQuest(quest,alter);
     floweyInteractButton("clear", "");
     } else {
         // This runs if they click Cancel
