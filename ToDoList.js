@@ -7,10 +7,10 @@ let btnClear = document.querySelector('.btnClear');
 let search = document.querySelector(".txtFindQuest");
 loadQuest(quest,alter);
 
-search.addEventListener("keydown",(event)=>{console.log(searchQuest(search.value))})
-btnAdd.onclick = () =>{
-    addQuest();
-};
+search.addEventListener("keydown",(event)=>{console.log(event.key);searchQuest(search.value)})
+btnAdd.addEventListener("click",()=>addQuest());
+
+txtQuest.addEventListener("keydown",(event)=>{if (event.key === 'Enter') addQuest();});
 btnClear.onclick = () => {
     clearData();
 };
