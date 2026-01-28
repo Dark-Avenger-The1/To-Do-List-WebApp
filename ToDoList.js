@@ -53,7 +53,7 @@ function loadQuest(arr,arr2){
                 console.log("Red");
                 arr2[i]-=1;
             }
-            
+            loadQuest(quest,alter);
             
         }
         questList.append(li);
