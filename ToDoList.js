@@ -9,7 +9,6 @@ loadQuest(quest,alter);
 
 search.addEventListener("keydown",(event)=>{console.log(event.key);searchQuest(search.value)})
 btnAdd.addEventListener("click",()=>addQuest());
-
 txtQuest.addEventListener("keydown",(event)=>{if (event.key === 'Enter') addQuest();});
 btnClear.onclick = () => {
     clearData();

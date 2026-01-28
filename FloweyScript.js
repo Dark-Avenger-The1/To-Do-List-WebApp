@@ -8,6 +8,11 @@ function loadFloweyGreetings(){
     floweySoundEffect.play();
     floweySpeak("Greetings, I am Flowey. I the one will assist and manage your Quest List.");
 }
+setVol(0.10);
+
+function setVol(vol){
+    floweySoundEffect.volume=vol;
+}
 
 function floweyAudioManager(){
     floweySoundEffect.pause();
