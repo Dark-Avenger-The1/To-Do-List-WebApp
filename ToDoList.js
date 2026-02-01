@@ -1,5 +1,9 @@
-let quest = ["Conquer Britain","Set Sail to Atlantic"];
-let alter = [0,0];
+let quest = JSON.parse(localStorage.getItem('quest'));
+let alter = JSON.parse(localStorage.getItem('alter'));
+if(!quest){
+    quest=["Conquer Britain","Set Sail to Atlantic"];
+    alter=[0,0];
+}
 let btnAdd = document.querySelector(".btnAdd");
 let questList = document.querySelector('.ulQuestList');
 let txtQuest = document.querySelector('.txtQuest');
@@ -14,6 +18,10 @@ btnClear.onclick = () => {
     clearData();
 };
 
+function saveToLocal(arr,arr2){
+    localStorage.setItem('quest',JSON.stringify(arr));
+    localStorage.setItem('alter',JSON.stringify(arr2));
+}
 function addQuest(){
     let questName = txtQuest.value; // Get the text typed in the box
     if (questName === "") {
@@ -58,6 +66,7 @@ function loadQuest(arr,arr2){
         }
         questList.append(li);
     }
+    saveToLocal(arr,arr2);
 }
 
 function searchQuest(itemToSearch){
